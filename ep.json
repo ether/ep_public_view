@@ -1,0 +1,10 @@
+{
+  "parts": [
+    {
+      "name": "noscript",
+      "hooks": {
+        "eejsBlock_body": "ep_text_content_in_noscripts_tag/noscript"
+      }
+    }
+  ]
+}

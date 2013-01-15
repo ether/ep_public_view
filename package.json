@@ -1,0 +1,45 @@
+{
+  "name": "ep_text_content_in_noscripts_tag",
+  "description": "USE THIS PLUGIN WITH CAUTION.  This plugin will help make content indexable by evil search engines and the hordes of social networks waiting to suckle on the bussum of your content.  This plugin Allows search engines to use the noscript tags to get pad text contents, use with robots override plugin for publicly indexable pads",
+  "homepage": "https://github.com/johnyma22/ep_text_content_in_noscripts_tag",
+  "keywords": [
+    "search",
+    "engine",
+    "seo",
+    "privacy",
+    "robots"
+  ],
+  "author": {
+    "name": "John McLear",
+    "email": "john@mclear.co.uk",
+    "url": "http://mclear.co.uk"
+  },
+  "contributors": {
+    "name": "Marcel Klehr"
+  },
+  "version": "0.0.6",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnyma22/ep_text_content_in_noscripts_tag.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "_id": "ep_text_content_in_noscripts_tag@0.0.6",
+  "_engineSupported": true,
+  "_npmVersion": "1.1.24",
+  "_nodeVersion": "v0.8.8",
+  "_defaultsLoaded": true,
+  "dist": {
+    "shasum": "893bae88aa5262f0d2b16cc0c88e0cbfb2b0ece5"
+  },
+  "_from": "ep_text_content_in_noscripts_tag",
+  "readme": "ERROR: No README.md file found!",
+  "_npmUser": {
+    "name": "johnyma22",
+    "email": "john@mclear.co.uk"
+  }
+}
