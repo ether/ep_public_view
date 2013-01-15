@@ -13,7 +13,7 @@ exports.eejsBlock_body = function (hook_name, args, cb) {
 
     function(callback){ // Get the pad Text
       var padText = padManager.getPad(args.renderContext.req.params.pad, function(err, _pad){
-        console.warn("Got Pad Text", _pad.text());
+        console.warn("Got Pad Text");
         pad = _pad;
         ERR(err);
         callback();
@@ -21,13 +21,14 @@ exports.eejsBlock_body = function (hook_name, args, cb) {
     },
   
     function(callback){ // Append the pad Text to the Body
-      console.warn("adding pad text", pad.text());
+      console.warn("adding pad text");
       args.content = args.content + "<noscript>"+safe_tags(pad.text())+"</noscript>";
       callback();
     },
 
     function(callback){ // Return the callback to EEJS
-      return cb();
+      console.warn(args.content); // Shows the correct content including teh noscript tags!!
+      return cb(); // doesn't display the correct args.content!
       callback();
     }
   ]);
