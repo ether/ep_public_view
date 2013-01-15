@@ -1,3 +1,5 @@
+// Weirdly this works on refresh but doesn't work on first load!
+
 var eejs = require('ep_etherpad-lite/node/eejs/');
 var padManager = require('ep_etherpad-lite/node/db/PadManager');
 var ERR = require("ep_etherpad-lite/node_modules/async-stacktrace");
