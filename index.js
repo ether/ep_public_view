@@ -31,7 +31,7 @@ exports.expressServer = function (hook_name, args, cb) {
 
         args.content = "<html><body>";
         args.content += "<style>body{font-family:arial;font-size:14px;margin-top:20px;max-width:800px;margin-left:auto;margin-right:auto;}#editLink{float:right;font-weight:bold;margin-top:20px;}</style>";
-        args.content += "<div id='padContents'>"+text+"</div>";
+        args.content += "<div id='padContents'>"+safe_tags(text)+"</div>";
         args.content += "<div id='editLink'><a href='/p/"+padId+"'>Edit this pad</a></div>";
         args.content += "</body></html>";
         res.send(args.content);
