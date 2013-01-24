@@ -1,7 +1,7 @@
 {
-  "name": "ep_text_content_in_noscripts_tag",
-  "description": "USE THIS PLUGIN WITH CAUTION.  This plugin will help make content indexable by evil search engines and the hordes of social networks waiting to suckle on the bussum of your content.  This plugin Allows search engines to use the noscript tags to get pad text contents, use with robots override plugin for publicly indexable pads",
-  "homepage": "https://github.com/johnmclear/ep_text_content_in_noscripts_tag",
+  "name": "ep_public_view",
+  "description": "USE THIS PLUGIN WITH CAUTION.  This plugin will help make content indexable by evil search engines and the hordes of social networks waiting to suckle on the bussum of your content.  This plugin Allows search engines to get pad text contents, use with robots override plugin for publicly indexable pads .. This plugin supercedes ep_text_content_in_noscripts_tag",
+  "homepage": "https://github.com/johnmclear/ep_public_view",
   "keywords": [
     "search",
     "engine",
@@ -14,13 +14,10 @@
     "email": "john@mclear.co.uk",
     "url": "http://mclear.co.uk"
   },
-  "contributors": {
-    "name": "Marcel Klehr"
-  },
   "version": "0.0.7",
   "repository": {
     "type": "git",
-    "url": "git://github.com/johnmclear/ep_text_content_in_noscripts_tag.git"
+    "url": "git://github.com/johnmclear/ep_public_view.git"
   },
   "dependencies": {},
   "devDependencies": {}

@@ -1,9 +1,10 @@
 {
   "parts": [
     {
-      "name": "noscript",
+      "name": "ep_public_view",
       "hooks": {
-        "eejsBlock_body": "ep_text_content_in_noscripts_tag/noscript"
+        "expressConfigure"       : "ep_public_view/index:expressConfigure",
+        "expressCreateServer"    : "ep_public_view/index:expressServer"
       }
     }
   ]
