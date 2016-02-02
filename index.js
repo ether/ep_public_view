@@ -27,6 +27,11 @@ exports.expressServer = function (hook_name, args, cb) {
       function(callback){ // Get the pad Text
         var padText = padManager.getPad(padId, function(err, _pad){
           pad = _pad;
+
+          db.getSub("pad:"+padId+":revs:"+pad.head, ["meta", "timestamp"], function(err, timestamp){
+             pad.timestamp = timestamp;
+          });
+
           text = safe_tags(pad.text()).replace(/\n/g,"<br/>");
           ERR(err);
           callback();
@@ -38,7 +43,6 @@ exports.expressServer = function (hook_name, args, cb) {
         /* Why don't we use EEJS require here?  Well EEJS require isn't ASYNC so on first load
         it would bring in the .ejs content only and then on second load pad contents would be included..
         Sorry this is ugly but that's how the plugin FW was designed by @redhog -- bug him for a fix! */
-
         args.content = "<html><head>";
         if(title) args.content += "<title>"+title+"</title>";
         args.content += "</head><body>";
@@ -46,6 +50,7 @@ exports.expressServer = function (hook_name, args, cb) {
         args.content += "<div id='padContents'>"+text+"</div>";
         args.content += "<div id='editLink'><a href='/p/"+padId+"'>Edit this pad</a></div>";
         args.content += "</body></html>";
+        res.setHeader('Last-Modified', (new Date(pad.timestamp)).toUTCString());
         res.send(args.content);
         callback();
       },
