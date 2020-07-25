@@ -1,6 +1,65 @@
 language: node_js
-deploy:
-  api_key:
-    secure: Nul4q6KgktgkmM2ks9ShVNPy5OPAw2xPQnFfbC6523iprvXmHrFCKp9bGW391sKgZPdD9tHRFBDaA12CaZRVR0qdBBqNQh/X56wbg1ISdg3ESIgHC+iWnSUt1MG7FnMf1YvYDISkUTgs++M0waz0KiRhveFdrgj/9HTt6Dz/50Q=
-  provider: npm
-  email: john@mclear.co.uk
+
+node_js:
+  - "lts/*"
+
+cache: false
+
+before_install:
+  - sudo add-apt-repository -y ppa:libreoffice/ppa
+  - sudo apt-get update
+  - sudo apt-get -y install libreoffice
+  - sudo apt-get -y install libreoffice-pdfimport
+
+services:
+  - docker
+
+install:
+  - "bin/installDeps.sh"
+  - "export GIT_HASH=$(git rev-parse --verify --short HEAD)"
+
+before_script:
+  - "tests/frontend/travis/sauce_tunnel.sh"
+
+script:
+  - "tests/frontend/travis/runner.sh"
+
+env:
+  global:
+    - secure: "WMGxFkOeTTlhWB+ChMucRtIqVmMbwzYdNHuHQjKCcj8HBEPdZLfCuK/kf4rG\nVLcLQiIsyllqzNhBGVHG1nyqWr0/LTm8JRqSCDDVIhpyzp9KpCJQQJG2Uwjk\n6/HIJJh/wbxsEdLNV2crYU/EiVO3A4Bq0YTHUlbhUqG3mSCr5Ec="
+    - secure: "gejXUAHYscbR6Bodw35XexpToqWkv2ifeECsbeEmjaLkYzXmUUNWJGknKSu7\nEUsSfQV8w+hxApr1Z+jNqk9aX3K1I4btL3cwk2trnNI8XRAvu1c1Iv60eerI\nkE82Rsd5lwUaMEh+/HoL8ztFCZamVndoNgX7HWp5J/NRZZMmh4g="
+
+jobs:
+  include:
+    - name: "Run the Backend tests"
+      install:
+        - "mkdir ep_public_view"
+        - "mv !(ep_public_view) ep_public_view"
+        - "git clone https://github.com/ether/etherpad-lite.git etherpad"
+        - "cd etherpad"
+        - "mkdir node_modules"
+        - "mv ../ep_public_view node_modules"
+        - "bin/installDeps.sh"
+        - "export GIT_HASH=$(git rev-parse --verify --short HEAD)"
+        - "cd src && npm install && cd -"
+      script:
+        - "tests/frontend/travis/runnerBackend.sh"
+    - name: "Test the Frontend"
+      install:
+        - "mkdir ep_public_view"
+        - "mv !(ep_public_view) ep_public_view"
+        - "git clone https://github.com/ether/etherpad-lite.git etherpad"
+        - "cd etherpad"
+        - "mkdir node_modules"
+        - "mv ../ep_public_view node_modules"
+        - "bin/installDeps.sh"
+        - "export GIT_HASH=$(git rev-parse --verify --short HEAD)"
+      script:
+        - "tests/frontend/travis/runner.sh"
+
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#etherpad-lite-dev"
+
+##ETHERPAD_TRAVIS_V=1
