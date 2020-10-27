@@ -20,5 +20,9 @@
     "url": "git://github.com/johnmclear/ep_public_view.git"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {},
+  "funding": {
+    "type": "individual",
+    "url": "http://etherpad.org/"
+  }
 }
