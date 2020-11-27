@@ -35,5 +35,8 @@
   "eslintConfig": {
     "root": true,
     "extends": "etherpad/plugin"
+  },
+  "peerDependencies": {
+    "ep_etherpad-lite": ">=1.8.6"
   }
 }
