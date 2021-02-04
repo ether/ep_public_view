@@ -43,5 +43,9 @@
   },
   "engines": {
     "node": ">=10.13.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   }
 }
