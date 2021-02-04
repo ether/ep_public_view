@@ -3,7 +3,6 @@
     {
       "name": "ep_public_view",
       "hooks": {
-        "expressConfigure"       : "ep_public_view/index:expressConfigure",
         "expressCreateServer"    : "ep_public_view/index:expressServer"
       }
     }

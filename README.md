@@ -1,7 +1,11 @@
-[![Travis (.org)](https://api.travis-ci.org/johnmclear/ep_public_view.git.svg?branch=develop)](https://travis-ci.org/github/johnmclear/ep_public_view.git)
+# Public Search engine indexable pad contents
+Let's say you have made loads of awesome content in your pad but search engines haven't indexed it.
 
-# My awesome plugin README example
-Explain what your plugin does and who it's useful for.
+ep_public_view serves your pad HTML as static HTML that can be indexed by search engines.
+
+# Usage
+
+Visit the /public/$whateverpadid$ IE http://etherpad.com/public/test endpoint to visit the public representation of your pad.
 
 ## Example animated gif of usage if appropriate
 
@@ -9,6 +13,9 @@ Explain what your plugin does and who it's useful for.
 npm install ep_public_view
 
 or Use the Etherpad ``/admin`` interface.
+
+## Performance
+It's advised that you cache the requests made to this endpoint in a reverse proxy such as nginx, varnish or haproxy.
 
 ## Settings
 Document settings if any
