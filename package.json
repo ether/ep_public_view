@@ -14,7 +14,7 @@
     "email": "john@mclear.co.uk",
     "url": "http://mclear.co.uk"
   },
-  "version": "0.0.13",
+  "version": "0.0.14",
   "repository": {
     "type": "git",
     "url": "git://github.com/johnmclear/ep_public_view.git"
