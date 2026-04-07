@@ -12,7 +12,7 @@ Visit the /public/$whateverpadid$ IE http://etherpad.com/public/test endpoint to
 ## Example animated gif of usage if appropriate
 
 ## Installing
-npm install ep_public_view
+pnpm run plugins install ep_public_view
 
 or Use the Etherpad ``/admin`` interface.
 
