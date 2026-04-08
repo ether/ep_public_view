@@ -17,7 +17,7 @@
   "version": "0.0.38",
   "repository": {
     "type": "git",
-    "url": "git://github.com/johnmclear/ep_public_view.git"
+    "url": "https://github.com/ether/ep_public_view.git"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
