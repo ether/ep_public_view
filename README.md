@@ -1,4 +1,4 @@
-![Publish Status](https://github.com/ether/ep_public_view/workflows/Node.js%20Package/badge.svg) ![Backend Tests Status](https://github.com/ether/ep_public_view/workflows/Backend%20tests/badge.svg)
+![Publish Status](https://github.com/ether/ep_public_view/workflows/Node.js%20Package/badge.svg) [![Backend Tests Status](https://github.com/ether/ep_public_view/actions/workflows/test-and-release.yml/badge.svg)](https://github.com/ether/ep_public_view/actions/workflows/test-and-release.yml)
 
 # Public Search engine indexable pad contents
 Let's say you have made loads of awesome content in your pad but search engines haven't indexed it.
