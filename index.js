@@ -5,7 +5,10 @@ const exporthtml = require('ep_etherpad-lite/node/utils/ExportHtml');
 const db = require('ep_etherpad-lite/node/db/DB');
 
 exports.expressServer = (hookName, args, cb) => {
-  args.app.get('/public/:padId(*)', async (req, res) => {
+  // Express 5 / path-to-regexp v6 rejects `:padId(*)`. Use a regex
+  // route and copy the unnamed capture into req.params.padId.
+  args.app.get(/^\/public\/(.+)$/, async (req, res) => {
+    req.params.padId = req.params[0];
     const padId = req.params.padId.replace(/\.\./g, '').split('?')[0];
 
     const pad = await padManager.getPad(padId);
